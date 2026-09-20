@@ -15,9 +15,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r requirements.txt
 
-      - name: Run Smoke Test
+      - name: Run Tests
         run: |
-          echo "Running build validation..."
-          python -c "print('CI Build Success!')"
+          pytest test_app.py
